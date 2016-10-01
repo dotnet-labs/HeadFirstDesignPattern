@@ -53,6 +53,10 @@
     <Compile Include="Coffee\Condiments\Mocha.cs" />
     <Compile Include="Coffee\Condiments\Whip.cs" />
     <Compile Include="Coffee\Condiments\Soy.cs" />
+    <Compile Include="Coffee\Sizes\Grande.cs" />
+    <Compile Include="Coffee\Sizes\SizeDecorator.cs" />
+    <Compile Include="Coffee\Sizes\Tall.cs" />
+    <Compile Include="Coffee\Sizes\Venti.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
