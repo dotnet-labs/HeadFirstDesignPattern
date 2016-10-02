@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FactoryPattern.PizzaIngredient;
+using FactoryPattern.PizzaIngredient.Ingredients;
+using System;
 using System.Collections.Generic;
 
 namespace FactoryPattern.PizzaProduct
@@ -6,38 +8,27 @@ namespace FactoryPattern.PizzaProduct
     public abstract class Pizza
     {
         public string Name { get; protected set; }
-        public string Dough { get; protected set; }
-        public string Sauce { get; protected set; }
-        public List<Topping> Toppings { get; protected set; }
+        public IDough Dough { get; protected set; }
+        public ISauce Sauce { get; protected set; }
+        public List<IVeggie> Veggies { get; protected set; }
+        public ICheese Cheese { get; protected set; }
+        public IPepperoni Pepperoni { get; protected set; }
+        public IClams Clams { get; protected set; }
+        protected readonly IPizzaIngredientFactory IngredientFactory;
 
-        protected Pizza()
+        protected Pizza(IPizzaIngredientFactory ingredientFactory)
         {
-            Toppings = new List<Topping>();
+            IngredientFactory = ingredientFactory;
         }
 
-        public void AddTopping(Topping topping)
-        {
-            Toppings.Add(topping);
-        }
-
-        public void Prepare()
-        {
-            Console.WriteLine("Preparing " + Name);
-            Console.WriteLine("Tossing dough...");
-            Console.WriteLine("Adding sauce...");
-            Console.WriteLine($"Adding toppings:");
-            foreach (var topping in Toppings)
-            {
-                Console.WriteLine($"\t{topping.Name}");
-            }
-        }
+        public abstract void Prepare();
 
         public void Bake()
         {
             Console.WriteLine("Bake for 25 minutes at 350 degree");
         }
 
-        public virtual void Cut()
+        public void Cut()
         {
             Console.WriteLine("Cutting the pizza into diagonal slices.");
         }
@@ -45,6 +36,11 @@ namespace FactoryPattern.PizzaProduct
         public void Box()
         {
             Console.WriteLine("Place pizza in official PizzaStore box.");
+        }
+
+        public void SetName(string name)
+        {
+            Name = name;
         }
     }
 }

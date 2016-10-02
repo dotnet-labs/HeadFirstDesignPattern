@@ -1,24 +1,45 @@
-﻿using FactoryPattern.PizzaProduct;
+﻿using FactoryPattern.PizzaIngredient;
+using FactoryPattern.PizzaProduct;
 
 namespace FactoryPattern.PizzaStore
 {
     public class NYStylePizzaStore : PizzaStore
     {
+        private readonly NYPizzaIngredientFactory _ingredientFactory;
+        public NYStylePizzaStore()
+        {
+            _ingredientFactory = new NYPizzaIngredientFactory();
+        }
+
         protected override Pizza CreatePizza(PizzaType type)
         {
+            Pizza pizza;
+
             switch (type)
             {
                 case PizzaType.Cheese:
-                    return new NYStyleCheesePizza();
+                    pizza = new CheesePizza(_ingredientFactory);
+                    pizza.SetName("New York Style Cheese Pizza");
+                    break;
                 case PizzaType.Pepperoni:
-                    return new NYStylePepperoniPizza();
+                    pizza = new PepperoniPizza(_ingredientFactory);
+                    pizza.SetName("New York Style Pepperoni Pizza");
+                    break;
                 case PizzaType.Clam:
-                    return new NYStyleClamPizza();
+                    pizza = new ClamPizza(_ingredientFactory);
+                    pizza.SetName("New York Style Clam Pizza");
+                    break;
                 case PizzaType.Veggie:
-                    return new NYStyleVeggiePizza();
+                    pizza = new VeggiePizza(_ingredientFactory);
+                    pizza.SetName("New York Style Veggie Pizza");
+                    break;
                 default:
                     return null;
             }
+
+            return pizza;
         }
+
+
     }
 }
