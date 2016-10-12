@@ -6,10 +6,10 @@ namespace IteratorPattern.Waitress
 {
     public class Waitress
     {
-        private readonly PancakeHouseMenu _pancakeHouseMenu;
-        private readonly DinerMenu _dinerMenu;
+        private readonly IMenu _pancakeHouseMenu;
+        private readonly IMenu _dinerMenu;
 
-        public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu)
+        public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu)
         {
             _pancakeHouseMenu = pancakeHouseMenu;
             _dinerMenu = dinerMenu;

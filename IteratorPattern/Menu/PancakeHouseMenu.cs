@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace IteratorPattern.Menu
 {
-    public class PancakeHouseMenu
+    public class PancakeHouseMenu : IMenu
     {
         private readonly List<MenuItem> _menuItems;
 

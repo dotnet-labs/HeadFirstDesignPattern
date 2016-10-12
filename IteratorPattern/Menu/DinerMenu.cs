@@ -3,7 +3,7 @@ using System;
 
 namespace IteratorPattern.Menu
 {
-    public class DinerMenu
+    public class DinerMenu : IMenu
     {
         public static readonly int MaxItems = 6;
         private int _numberOfItems;
