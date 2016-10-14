@@ -1,4 +1,4 @@
-﻿namespace ProxyPattern.PersonBean
+﻿namespace ProxyPattern.MatchMaking
 {
     public interface IPersonBean
     {

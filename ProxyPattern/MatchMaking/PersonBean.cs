@@ -1,11 +1,11 @@
-﻿namespace ProxyPattern.PersonBean
+﻿namespace ProxyPattern.MatchMaking
 {
-    public class PersonBeanImpl : IPersonBean
+    public class PersonBean : IPersonBean
     {
         private int _rating;
         private int _ratingCount;
 
-        public PersonBeanImpl()
+        public PersonBean()
         {
             _ratingCount = 0;
         }
@@ -22,7 +22,7 @@
         public void SetHotOrNotRating(int rating)
         {
             _rating += rating;
-            _ratingCount++; 
+            _ratingCount++;
         }
     }
 }

@@ -48,11 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Castle\CastleDynamicProxy.cs" />
-    <Compile Include="PersonBean\IPersonBean.cs" />
-    <Compile Include="PersonBean\PersonBeanImpl.cs" />
+    <Compile Include="MatchMaking\IPersonBean.cs" />
+    <Compile Include="MatchMaking\MatchMakingTestDrive.cs" />
+    <Compile Include="MatchMaking\PersonBean.cs" />
+    <Compile Include="MatchMaking\ProxyHandler\IInvocationHandler.cs" />
+    <Compile Include="MatchMaking\ProxyHandler\NonOwnerInvocationHandler.cs" />
+    <Compile Include="MatchMaking\ProxyHandler\OwnerInvocationHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProxyHandler\IInvocationHandler.cs" />
     <Compile Include="SimpleProxyPattern\SimpleImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
