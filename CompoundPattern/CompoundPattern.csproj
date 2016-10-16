@@ -50,6 +50,10 @@
     <Compile Include="DuckSimulator.cs" />
     <Compile Include="Flock\Flock.cs" />
     <Compile Include="IQuackable.cs" />
+    <Compile Include="Observable\IObserver.cs" />
+    <Compile Include="Observable\IQuackObservable.cs" />
+    <Compile Include="Observable\QuackObservable.cs" />
+    <Compile Include="Observable\Quackologist.cs" />
     <Compile Include="SomeDucks\DuckCall.cs" />
     <Compile Include="SomeDucks\MallardDuck.cs" />
     <Compile Include="SomeDucks\RedheadDuck.cs" />

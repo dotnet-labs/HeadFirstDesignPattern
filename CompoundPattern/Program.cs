@@ -12,6 +12,7 @@ namespace CompoundPattern
             simulator.SimulateWithCounter();
             simulator.SimulateUsingFactory(new CountingDuckFactory());
             simulator.SimulateFlock(new CountingDuckFactory());
+            simulator.SimulateFlockWithObserver(new CountingDuckFactory());
             Console.ReadKey();
         }
     }
