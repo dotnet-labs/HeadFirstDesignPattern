@@ -3,9 +3,9 @@ using System;
 
 namespace CompositePattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             MenuTestDrive();
             Console.ReadKey();
@@ -29,7 +29,7 @@ namespace CompositePattern
                 true, 3.89m));
             dinerMenu.Add(dessertMenu);
             dessertMenu.Add(new MenuItem("Apple Pie",
-                "Apple pie with a flakey crust, topped with vanilla icecream",
+                "Apple pie with a flaky crust, topped with vanilla ice cream",
                 true, 1.59m));
 
             var waitress = new Waitress.Waitress(allMenus);

@@ -2,9 +2,9 @@
 
 namespace ObserverPattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             WeatherStation();
             Console.ReadKey();
@@ -15,7 +15,7 @@ namespace ObserverPattern
             var weatherData = new WeatherData();
             var currentDisplay = new CurrentConditionDisplay(weatherData);
             var statisticsDisplay = new StatisticsDisplay(weatherData);
-            var forcastDisplay = new ForcastDisplay(weatherData);
+            var forcastDisplay = new ForecastDisplay(weatherData);
 
             weatherData.SetMeasurements(80, 65, 30.4f);
             weatherData.SetMeasurements(82, 70, 29.4f);

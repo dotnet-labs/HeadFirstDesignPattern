@@ -11,11 +11,11 @@ namespace CommandPattern.RemoteControl
             var light = new Light();
             var lightOn = new LightOnCommand(light);
             var garageDoor = new GarageDoor();
-            var garagedoorOpenCommand = new GarageDoorOpenCommand(garageDoor);
+            var garageDoorOpenCommand = new GarageDoorOpenCommand(garageDoor);
 
             remote.SetCommand(lightOn);
             remote.ButtonWasPressed();
-            remote.SetCommand(garagedoorOpenCommand);
+            remote.SetCommand(garageDoorOpenCommand);
             remote.ButtonWasPressed();
         }
     }

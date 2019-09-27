@@ -3,9 +3,9 @@ using System;
 
 namespace CommandPattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             SimpleRemoteControlTest.Test();
 

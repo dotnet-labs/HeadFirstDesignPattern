@@ -6,11 +6,6 @@ namespace CommandPattern.RemoteControl
     {
         private ICommand _slot;
 
-        public SimpleRemoteControl()
-        {
-
-        }
-
         public void SetCommand(ICommand command)
         {
             _slot = command;

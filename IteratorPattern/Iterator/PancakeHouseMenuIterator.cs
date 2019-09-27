@@ -8,9 +8,9 @@ namespace IteratorPattern.Iterator
         private readonly List<MenuItem> _menuItems;
         private int _index;
 
-        public PancakeHouseMenuIterator(List<MenuItem> _menuItems)
+        public PancakeHouseMenuIterator(List<MenuItem> menuItems)
         {
-            this._menuItems = _menuItems;
+            _menuItems = menuItems;
             _index = 0;
         }
 

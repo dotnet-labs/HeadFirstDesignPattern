@@ -6,12 +6,10 @@ namespace CompoundPattern.Flock
     public class Flock : IQuackable
     {
         private readonly List<IQuackable> _quackers;
-        private readonly IQuackObservable _observable;
 
         public Flock()
         {
             _quackers = new List<IQuackable>();
-            _observable = new QuackObservable(this);
         }
 
         public void Add(IQuackable quacker)

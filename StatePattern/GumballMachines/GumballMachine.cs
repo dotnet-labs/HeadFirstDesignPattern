@@ -33,7 +33,7 @@ namespace StatePattern.GumballMachines
             _state = state;
         }
 
-        public IState GetHasQuaterState()
+        public IState GetHasQuarterState()
         {
             return _hasQuarterState;
         }

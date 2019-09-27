@@ -2,11 +2,11 @@
 
 namespace ObserverPattern
 {
-    public class ForcastDisplay : IObserver, IDisplayElement
+    public class ForecastDisplay : IObserver, IDisplayElement
     {
         private float _temperature;
 
-        public ForcastDisplay(ISubject weatherData)
+        public ForecastDisplay(ISubject weatherData)
         {
             weatherData.RegisterObserver(this);
         }

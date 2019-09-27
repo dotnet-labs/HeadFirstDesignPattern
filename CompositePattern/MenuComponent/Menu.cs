@@ -7,7 +7,7 @@ namespace CompositePattern.MenuComponent
     {
         public string Name { get; }
         public string Description { get; }
-        private List<IMenuComponent> _menuComponents;
+        private readonly List<IMenuComponent> _menuComponents;
 
         public Menu(string description, string name)
         {
@@ -29,17 +29,19 @@ namespace CompositePattern.MenuComponent
 
         public IMenuComponent GetChild(int i)
         {
-            return (IMenuComponent)_menuComponents[i];
+            return _menuComponents[i];
         }
 
         public void Print()
         {
             Console.WriteLine("\n" + Name + ", " + Description);
             Console.WriteLine("-----------------------------");
-            var iterator = _menuComponents.GetEnumerator();
-            while (iterator.MoveNext())
+            using (var iterator = _menuComponents.GetEnumerator())
             {
-                iterator.Current?.Print();
+                while (iterator.MoveNext())
+                {
+                    iterator.Current?.Print();
+                }
             }
         }
     }

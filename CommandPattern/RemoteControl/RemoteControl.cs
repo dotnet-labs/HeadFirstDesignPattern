@@ -30,17 +30,12 @@ namespace CommandPattern.RemoteControl
             _undoCommand = noCommand;
         }
 
-        private static void EnsureSlotNumberIsValid(int slot)
+        public void SetCommand(int slot, ICommand onCommand, ICommand offCommand)
         {
             if (slot < 0 || slot > 6)
             {
                 throw new ArgumentException("Slot number is out of range.");
             }
-        }
-
-        public void SetCommand(int slot, ICommand onCommand, ICommand offCommand)
-        {
-            EnsureSlotNumberIsValid(slot);
             _onCommands[slot] = onCommand;
             _offCommands[slot] = offCommand;
         }

@@ -4,9 +4,9 @@ using System;
 
 namespace FactoryPattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             PizzaTestDrive();
             Console.ReadKey();
@@ -14,7 +14,7 @@ namespace FactoryPattern
 
         private static void PizzaTestDrive()
         {
-            var nyStore = new NYStylePizzaStore();
+            var nyStore = new NyStylePizzaStore();
             var pizza = nyStore.OrderPizza(PizzaType.Cheese);
             Console.WriteLine($"You ordered a {pizza.Name}\n");
 

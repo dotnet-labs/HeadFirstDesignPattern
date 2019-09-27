@@ -5,9 +5,9 @@ using System;
 
 namespace DecoratorPattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Coffee();
             Console.ReadKey();

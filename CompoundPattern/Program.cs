@@ -3,9 +3,9 @@ using System;
 
 namespace CompoundPattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             var simulator = new DuckSimulator();
             simulator.Simulate();

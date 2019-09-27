@@ -3,10 +3,10 @@ using FactoryPattern.PizzaProduct;
 
 namespace FactoryPattern.PizzaStore
 {
-    public class NYStylePizzaStore : PizzaStore
+    public class NyStylePizzaStore : PizzaStore
     {
         private readonly NYPizzaIngredientFactory _ingredientFactory;
-        public NYStylePizzaStore()
+        public NyStylePizzaStore()
         {
             _ingredientFactory = new NYPizzaIngredientFactory();
         }

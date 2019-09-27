@@ -15,7 +15,7 @@ namespace StatePattern.States
         public void InsertQuarter()
         {
             Console.WriteLine("You inserted a quarter.");
-            _gumballMachine.SetState(_gumballMachine.GetHasQuaterState());
+            _gumballMachine.SetState(_gumballMachine.GetHasQuarterState());
         }
 
         public void EjectQuarter()
