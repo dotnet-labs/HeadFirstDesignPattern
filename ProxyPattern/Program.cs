@@ -1,5 +1,4 @@
 ﻿using ProxyPattern.Castle;
-using ProxyPattern.MatchMaking;
 using System;
 
 namespace ProxyPattern
@@ -9,9 +8,6 @@ namespace ProxyPattern
         private static void Main()
         {
             CastleDynamicProxyTest.Test();
-            Console.ReadKey();
-
-            MatchMakingTestDrive.Run();
             Console.ReadKey();
         }
     }

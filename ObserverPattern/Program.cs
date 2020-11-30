@@ -12,7 +12,7 @@ namespace ObserverPattern
 
         private static void WeatherStation()
         {
-            var weatherData = new WeatherData();
+            var weatherData = new Weatherdata();
             var currentDisplay = new CurrentConditionDisplay(weatherData);
             var statisticsDisplay = new StatisticsDisplay(weatherData);
             var forcastDisplay = new ForecastDisplay(weatherData);
