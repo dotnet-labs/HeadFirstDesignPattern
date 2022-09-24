@@ -1,18 +1,13 @@
-﻿using System;
+﻿namespace StrategyPattern.Duck;
 
-namespace StrategyPattern.Duck
+public class MallardDuck : Duck
 {
-    public class MallardDuck : Duck
+    public MallardDuck() : base(new FlyWithWings(), new CanQuack())
     {
-        public MallardDuck()
-        {
-            FlyBehavior = new FlyWithWings();
-            QuackBehavior = new CanQuack();
-        }
+    }
 
-        public override void Display()
-        {
-            Console.WriteLine("I'm a real Mallard duck");
-        }
+    public override void Display()
+    {
+        Console.WriteLine("I'm a real Mallard duck");
     }
 }

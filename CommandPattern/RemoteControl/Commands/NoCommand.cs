@@ -1,13 +1,12 @@
-﻿namespace CommandPattern.RemoteControl.Commands
-{
-    public class NoCommand : ICommand
-    {
-        public void Execute()
-        {
-        }
+﻿namespace CommandPattern.RemoteControl.Commands;
 
-        public void Undo()
-        {
-        }
+public class NoCommand : ICommand
+{
+    public void Execute()
+    {
+    }
+
+    public void Undo()
+    {
     }
 }

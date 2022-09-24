@@ -1,46 +1,44 @@
 ﻿using Castle.DynamicProxy;
-using System;
 
-namespace ProxyPattern.Castle
+namespace ProxyPattern.Castle;
+
+public class MyInterceptorAspect : IInterceptor
 {
-    public class MyInterceptorAspect : IInterceptor
+    public void Intercept(IInvocation invocation)
     {
-        public void Intercept(IInvocation invocation)
-        {
-            var methodName = invocation.Method.Name;
-            Console.WriteLine($"Before {methodName}");
-            invocation.Proceed();
-            Console.WriteLine($"After {methodName}");
-        }
+        var methodName = invocation.Method.Name;
+        Console.WriteLine($"Before {methodName}");
+        invocation.Proceed();
+        Console.WriteLine($"After {methodName}");
     }
+}
 
-    public class CastleDynamicProxy
+public class CastleDynamicProxy
+{
+    public virtual void DoStuff()
     {
-        public virtual void DoStuff()
-        {
-            Console.WriteLine("Inside of DoStuff()");
-        }
+        Console.WriteLine("Inside of DoStuff()");
     }
+}
 
-    public class MyOtherClass
+public class MyOtherClass
+{
+    public virtual void DoOtherStuff()
     {
-        public virtual void DoOtherStuff()
-        {
-            Console.WriteLine("Inside of DoOtherStuff()");
-        }
+        Console.WriteLine("Inside of DoOtherStuff()");
     }
+}
 
-    public static class CastleDynamicProxyTest
+public static class CastleDynamicProxyTest
+{
+    public static void Test()
     {
-        public static void Test()
-        {
-            var generator = new ProxyGenerator();
-            var myObject = generator.CreateClassProxy<CastleDynamicProxy>(new MyInterceptorAspect());
-            var myOtherObject = generator.CreateClassProxy<MyOtherClass>(new MyInterceptorAspect());
+        var generator = new ProxyGenerator();
+        var myObject = generator.CreateClassProxy<CastleDynamicProxy>(new MyInterceptorAspect());
+        var myOtherObject = generator.CreateClassProxy<MyOtherClass>(new MyInterceptorAspect());
 
-            myObject.DoStuff();
-            Console.WriteLine();
-            myOtherObject.DoOtherStuff();
-        }
+        myObject.DoStuff();
+        Console.WriteLine();
+        myOtherObject.DoOtherStuff();
     }
 }

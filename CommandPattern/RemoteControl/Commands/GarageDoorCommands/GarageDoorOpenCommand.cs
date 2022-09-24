@@ -1,22 +1,21 @@
-﻿namespace CommandPattern.RemoteControl.Commands.GarageDoorCommands
+﻿namespace CommandPattern.RemoteControl.Commands.GarageDoorCommands;
+
+public class GarageDoorOpenCommand : ICommand
 {
-    public class GarageDoorOpenCommand : ICommand
+    private readonly GarageDoor _garageDoor;
+
+    public GarageDoorOpenCommand(GarageDoor garageDoor)
     {
-        private readonly GarageDoor _garageDoor;
+        _garageDoor = garageDoor;
+    }
 
-        public GarageDoorOpenCommand(GarageDoor garageDoor)
-        {
-            _garageDoor = garageDoor;
-        }
+    public void Execute()
+    {
+        _garageDoor.Open();
+    }
 
-        public void Execute()
-        {
-            _garageDoor.Open();
-        }
-
-        public void Undo()
-        {
-            _garageDoor.Close();
-        }
+    public void Undo()
+    {
+        _garageDoor.Close();
     }
 }

@@ -1,7 +1,6 @@
-﻿namespace ObserverPattern
+﻿namespace ObserverPattern;
+
+public interface IObserver
 {
-    public interface IObserver
-    {
-        void Update(float temp, float humidity, float pressure);
-    }
+    void Update(float temp, float humidity, float pressure);
 }

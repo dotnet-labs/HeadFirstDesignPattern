@@ -1,16 +1,6 @@
 ﻿using CommandPattern.RemoteControl;
-using System;
 
-namespace CommandPattern
-{
-    internal class Program
-    {
-        private static void Main()
-        {
-            SimpleRemoteControlTest.Test();
+SimpleRemoteControlTest.Test();
 
-            RemoteLoader.Test();
-            Console.ReadKey();
-        }
-    }
-}
+RemoteLoader.Test();
+Console.ReadKey();

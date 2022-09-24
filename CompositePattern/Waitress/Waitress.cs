@@ -1,19 +1,18 @@
 ﻿using CompositePattern.MenuComponent;
 
-namespace CompositePattern.Waitress
+namespace CompositePattern.Waitress;
+
+public class Waitress
 {
-    public class Waitress
+    private readonly IMenuComponent _allMenus;
+
+    public Waitress(IMenuComponent allMenus)
     {
-        private readonly IMenuComponent _allMenus;
+        _allMenus = allMenus;
+    }
 
-        public Waitress(IMenuComponent allMenus)
-        {
-            _allMenus = allMenus;
-        }
-
-        public void PrintMenu()
-        {
-            _allMenus.Print();
-        }
+    public void PrintMenu()
+    {
+        _allMenus.Print();
     }
 }

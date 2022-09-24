@@ -1,22 +1,21 @@
-﻿namespace CommandPattern.RemoteControl.Commands.Stereo
+﻿namespace CommandPattern.RemoteControl.Commands.Stereo;
+
+public class StereoOffCommand : ICommand
 {
-    public class StereoOffCommand : ICommand
+    private readonly Stereo _stereo;
+
+    public StereoOffCommand(Stereo stereo)
     {
-        private readonly Stereo _stereo;
+        _stereo = stereo;
+    }
 
-        public StereoOffCommand(Stereo stereo)
-        {
-            _stereo = stereo;
-        }
+    public void Execute()
+    {
+        _stereo.Off();
+    }
 
-        public void Execute()
-        {
-            _stereo.Off();
-        }
-
-        public void Undo()
-        {
-            _stereo.On();
-        }
+    public void Undo()
+    {
+        _stereo.On();
     }
 }

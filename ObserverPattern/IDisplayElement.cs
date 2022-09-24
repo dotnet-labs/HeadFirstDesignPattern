@@ -1,7 +1,6 @@
-﻿namespace ObserverPattern
+﻿namespace ObserverPattern;
+
+public interface IDisplayElement
 {
-    public interface IDisplayElement
-    {
-        void Display();
-    }
+    void Display();
 }

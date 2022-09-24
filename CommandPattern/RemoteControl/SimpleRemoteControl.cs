@@ -4,7 +4,7 @@ namespace CommandPattern.RemoteControl
 {
     public class SimpleRemoteControl
     {
-        private ICommand _slot;
+        private ICommand _slot = null!;
 
         public void SetCommand(ICommand command)
         {

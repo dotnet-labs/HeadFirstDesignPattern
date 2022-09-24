@@ -1,12 +1,9 @@
-﻿using System;
+﻿namespace CompoundPattern.Observable;
 
-namespace CompoundPattern.Observable
+public class Quackologist : IObserver
 {
-    public class Quackologist : IObserver
+    public void Update(IQuackObservable duck)
     {
-        public void Update(IQuackObservable duck)
-        {
-            Console.WriteLine($"Quackologist: {duck} just quacked.");
-        }
+        Console.WriteLine($"Quackologist: {duck} just quacked.");
     }
 }

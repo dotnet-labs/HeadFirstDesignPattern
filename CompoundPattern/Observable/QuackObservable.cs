@@ -1,29 +1,26 @@
-﻿using System.Collections.Generic;
+﻿namespace CompoundPattern.Observable;
 
-namespace CompoundPattern.Observable
+public class QuackObservable : IQuackObservable
 {
-    public class QuackObservable : IQuackObservable
+    private readonly List<IObserver> _observers;
+    private readonly IQuackObservable _duck;
+
+    public QuackObservable(IQuackObservable duck)
     {
-        private readonly List<IObserver> _observers;
-        private readonly IQuackObservable _duck;
+        _observers = new List<IObserver>();
+        _duck = duck;
+    }
 
-        public QuackObservable(IQuackObservable duck)
-        {
-            _observers = new List<IObserver>();
-            _duck = duck;
-        }
+    public void RegisterObserver(IObserver observer)
+    {
+        _observers.Add(observer);
+    }
 
-        public void RegisterObserver(IObserver observer)
+    public void NotifyObservers()
+    {
+        foreach (var observer in _observers)
         {
-            _observers.Add(observer);
-        }
-
-        public void NotifyObservers()
-        {
-            foreach (var observer in _observers)
-            {
-                observer.Update(_duck);
-            }
+            observer.Update(_duck);
         }
     }
 }

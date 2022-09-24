@@ -1,16 +1,10 @@
 ﻿using CompoundPattern.Observable;
-using System.Collections.Generic;
 
 namespace CompoundPattern.Flock
 {
     public class Flock : IQuackable
     {
-        private readonly List<IQuackable> _quackers;
-
-        public Flock()
-        {
-            _quackers = new List<IQuackable>();
-        }
+        private readonly List<IQuackable> _quackers = new();
 
         public void Add(IQuackable quacker)
         {

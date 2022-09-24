@@ -1,17 +1,16 @@
-﻿namespace FactoryPattern.PizzaIngredient.Ingredients
+﻿namespace FactoryPattern.PizzaIngredient.Ingredients;
+
+public interface ICheese
 {
-    public interface ICheese
-    {
-        string Name { get; }
-    }
+    string Name { get; }
+}
 
-    public class ReggianoCheese : ICheese
-    {
-        public string Name => "Reggiano Cheese";
-    }
+public class ReggianoCheese : ICheese
+{
+    public string Name => "Reggiano Cheese";
+}
 
-    public class Mozzarella : ICheese
-    {
-        public string Name => "Mozzarella Cheese";
-    }
+public class Mozzarella : ICheese
+{
+    public string Name => "Mozzarella Cheese";
 }

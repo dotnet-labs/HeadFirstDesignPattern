@@ -1,28 +1,30 @@
-﻿using System;
+﻿namespace StrategyPattern.Duck;
 
-namespace StrategyPattern.Duck
+public interface IFly
 {
-    public class FlyWithWings : IFly
-    {
-        public void Fly()
-        {
-            Console.WriteLine("I'm flying.");
-        }
-    }
+    void Fly();
+}
 
-    public class FlyNoWay : IFly
+public class FlyWithWings : IFly
+{
+    public void Fly()
     {
-        public void Fly()
-        {
-            Console.WriteLine("I can't fly.");
-        }
+        Console.WriteLine("I'm flying.");
     }
+}
 
-    public class FlyRocketPowered : IFly
+public class FlyNoWay : IFly
+{
+    public void Fly()
     {
-        public void Fly()
-        {
-            Console.WriteLine("I'm flying with a rocket.");
-        }
+        Console.WriteLine("I can't fly.");
+    }
+}
+
+public class FlyRocketPowered : IFly
+{
+    public void Fly()
+    {
+        Console.WriteLine("I'm flying with a rocket.");
     }
 }

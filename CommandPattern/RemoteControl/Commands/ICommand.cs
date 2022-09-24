@@ -1,8 +1,7 @@
-﻿namespace CommandPattern.RemoteControl.Commands
+﻿namespace CommandPattern.RemoteControl.Commands;
+
+public interface ICommand
 {
-    public interface ICommand
-    {
-        void Execute();
-        void Undo();
-    }
+    void Execute();
+    void Undo();
 }

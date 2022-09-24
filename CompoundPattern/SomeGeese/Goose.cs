@@ -1,12 +1,9 @@
-﻿using System;
+﻿namespace CompoundPattern.SomeGeese;
 
-namespace CompoundPattern.SomeGeese
+public class Goose
 {
-    public class Goose
+    public void Honk()
     {
-        public void Honk()
-        {
-            Console.WriteLine("Honk.");
-        }
+        Console.WriteLine("Honk.");
     }
 }

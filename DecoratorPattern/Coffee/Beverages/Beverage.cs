@@ -1,9 +1,8 @@
-﻿namespace DecoratorPattern.Coffee.Beverages
-{
-    public abstract class Beverage
-    {
-        public abstract string GetDescription();
+﻿namespace DecoratorPattern.Coffee.Beverages;
 
-        public abstract decimal Cost();
-    }
+public abstract class Beverage
+{
+    public abstract string GetDescription();
+
+    public abstract decimal Cost();
 }

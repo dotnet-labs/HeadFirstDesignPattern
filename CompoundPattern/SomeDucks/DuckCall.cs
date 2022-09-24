@@ -1,36 +1,34 @@
 ﻿using CompoundPattern.Observable;
-using System;
 
-namespace CompoundPattern.SomeDucks
+namespace CompoundPattern.SomeDucks;
+
+public class DuckCall : IQuackable
 {
-    public class DuckCall : IQuackable
+    private readonly IQuackObservable _observable;
+
+    public DuckCall()
     {
-        private readonly IQuackObservable _observable;
+        _observable = new QuackObservable(this);
+    }
 
-        public DuckCall()
-        {
-            _observable = new QuackObservable(this);
-        }
+    public void Quack()
+    {
+        Console.WriteLine("Kwak.");
+        NotifyObservers();
+    }
 
-        public void Quack()
-        {
-            Console.WriteLine("Kwak.");
-            NotifyObservers();
-        }
+    public void RegisterObserver(IObserver observer)
+    {
+        _observable.RegisterObserver(observer);
+    }
 
-        public void RegisterObserver(IObserver observer)
-        {
-            _observable.RegisterObserver(observer);
-        }
+    public void NotifyObservers()
+    {
+        _observable.NotifyObservers();
+    }
 
-        public void NotifyObservers()
-        {
-            _observable.NotifyObservers();
-        }
-
-        public override string ToString()
-        {
-            return "DuckCall";
-        }
+    public override string ToString()
+    {
+        return "DuckCall";
     }
 }

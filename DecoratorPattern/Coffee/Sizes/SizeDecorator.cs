@@ -1,14 +1,13 @@
 ﻿using DecoratorPattern.Coffee.Beverages;
 
-namespace DecoratorPattern.Coffee.Sizes
-{
-    public abstract class SizeDecorator : Beverage
-    {
-        protected Beverage Beverage;
+namespace DecoratorPattern.Coffee.Sizes;
 
-        protected SizeDecorator(Beverage beverage)
-        {
-            Beverage = beverage;
-        }
+public abstract class SizeDecorator : Beverage
+{
+    protected Beverage Beverage;
+
+    protected SizeDecorator(Beverage beverage)
+    {
+        Beverage = beverage;
     }
 }

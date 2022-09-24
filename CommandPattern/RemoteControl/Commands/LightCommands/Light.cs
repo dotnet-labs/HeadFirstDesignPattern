@@ -1,24 +1,21 @@
-﻿using System;
+﻿namespace CommandPattern.RemoteControl.Commands.LightCommands;
 
-namespace CommandPattern.RemoteControl.Commands.LightCommands
+public class Light
 {
-    public class Light
+    private readonly string _name;
+
+    public Light(string name = "")
     {
-        private readonly string _name;
+        _name = name;
+    }
 
-        public Light(string name = "")
-        {
-            _name = name;
-        }
+    public void On()
+    {
+        Console.WriteLine($"{_name} Light is On.");
+    }
 
-        public void On()
-        {
-            Console.WriteLine($"{_name} Light is On.");
-        }
-
-        public void Off()
-        {
-            Console.WriteLine($"{_name} Light is Off.");
-        }
+    public void Off()
+    {
+        Console.WriteLine($"{_name} Light is Off.");
     }
 }

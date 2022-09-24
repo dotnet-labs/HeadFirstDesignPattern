@@ -1,25 +1,22 @@
-﻿using System;
+﻿namespace ObserverPattern;
 
-namespace ObserverPattern
+public class StatisticsDisplay : IObserver, IDisplayElement
 {
-    public class StatisticsDisplay : IObserver, IDisplayElement
+    private float _temperature;
+
+    public StatisticsDisplay(ISubject weatherData)
     {
-        private float _temperature;
+        weatherData.RegisterObserver(this);
+    }
 
-        public StatisticsDisplay(ISubject weatherData)
-        {
-            weatherData.RegisterObserver(this);
-        }
+    public void Update(float temp, float humidity, float pressure)
+    {
+        _temperature = temp;
+        Display();
+    }
 
-        public void Update(float temp, float humidity, float pressure)
-        {
-            _temperature = temp;
-            Display();
-        }
-
-        public void Display()
-        {
-            Console.WriteLine($"Average temperature: {_temperature}F degrees.");
-        }
+    public void Display()
+    {
+        Console.WriteLine($"Average temperature: {_temperature}F degrees.");
     }
 }

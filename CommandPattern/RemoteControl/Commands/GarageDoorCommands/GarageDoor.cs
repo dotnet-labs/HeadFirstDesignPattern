@@ -1,17 +1,14 @@
-﻿using System;
+﻿namespace CommandPattern.RemoteControl.Commands.GarageDoorCommands;
 
-namespace CommandPattern.RemoteControl.Commands.GarageDoorCommands
+public class GarageDoor
 {
-    public class GarageDoor
+    public void Open()
     {
-        public void Open()
-        {
-            Console.WriteLine("Garage Door is opened.");
-        }
+        Console.WriteLine("Garage Door is opened.");
+    }
 
-        public void Close()
-        {
-            Console.WriteLine("Garage Door is closed.");
-        }
+    public void Close()
+    {
+        Console.WriteLine("Garage Door is closed.");
     }
 }

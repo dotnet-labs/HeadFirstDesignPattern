@@ -1,44 +1,42 @@
 ﻿using FactoryPattern.PizzaIngredient.Ingredients;
-using System.Collections.Generic;
 
-namespace FactoryPattern.PizzaIngredient
+namespace FactoryPattern.PizzaIngredient;
+
+public class NyPizzaIngredientFactory : IPizzaIngredientFactory
 {
-    public class NYPizzaIngredientFactory : IPizzaIngredientFactory
+    public IDough CreateDough()
     {
-        public IDough CreateDough()
-        {
-            return new ThinCrustDough();
-        }
+        return new ThinCrustDough();
+    }
 
-        public ISauce CreateSauce()
-        {
-            return new MarinaraSauce();
-        }
+    public ISauce CreateSauce()
+    {
+        return new MarinaraSauce();
+    }
 
-        public ICheese CreateCheese()
-        {
-            return new ReggianoCheese();
-        }
+    public ICheese CreateCheese()
+    {
+        return new ReggianoCheese();
+    }
 
-        public List<IVeggie> CreateVeggies()
+    public List<IVeggie> CreateVeggies()
+    {
+        return new List<IVeggie>
         {
-            return new List<IVeggie>
-            {
-                new Garlic(),
-                new Onion(),
-                new Mushroom(),
-                new RedPepper()
-            };
-        }
+            new Garlic(),
+            new Onion(),
+            new Mushroom(),
+            new RedPepper()
+        };
+    }
 
-        public IPepperoni CreatePepperoni()
-        {
-            return new SlicedPepperoni();
-        }
+    public IPepperoni CreatePepperoni()
+    {
+        return new SlicedPepperoni();
+    }
 
-        public IClams CreateClams()
-        {
-            return new FreshClams();
-        }
+    public IClams CreateClams()
+    {
+        return new FreshClams();
     }
 }

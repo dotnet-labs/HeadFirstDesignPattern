@@ -1,9 +1,8 @@
 ﻿using IteratorPattern.Iterator;
 
-namespace IteratorPattern.Menu
+namespace IteratorPattern.Menu;
+
+public interface IMenu
 {
-    public interface IMenu
-    {
-        IIterator CreateIterator();
-    }
+    IIterator CreateIterator();
 }

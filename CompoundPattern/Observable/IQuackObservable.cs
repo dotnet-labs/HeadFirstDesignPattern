@@ -1,8 +1,7 @@
-﻿namespace CompoundPattern.Observable
+﻿namespace CompoundPattern.Observable;
+
+public interface IQuackObservable
 {
-    public interface IQuackObservable
-    {
-        void RegisterObserver(IObserver observer);
-        void NotifyObservers();
-    }
+    void RegisterObserver(IObserver observer);
+    void NotifyObservers();
 }

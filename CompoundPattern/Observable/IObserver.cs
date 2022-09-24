@@ -1,7 +1,6 @@
-﻿namespace CompoundPattern.Observable
+﻿namespace CompoundPattern.Observable;
+
+public interface IObserver
 {
-    public interface IObserver
-    {
-        void Update(IQuackObservable duck);
-    }
+    void Update(IQuackObservable duck);
 }

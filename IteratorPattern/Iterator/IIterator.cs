@@ -1,8 +1,7 @@
-﻿namespace IteratorPattern.Iterator
+﻿namespace IteratorPattern.Iterator;
+
+public interface IIterator
 {
-    public interface IIterator
-    {
-        bool HasNext();
-        object Next();
-    }
+    bool HasNext();
+    object Next();
 }

@@ -1,9 +1,8 @@
 ﻿using CompoundPattern.Observable;
 
-namespace CompoundPattern
+namespace CompoundPattern;
+
+public interface IQuackable : IQuackObservable
 {
-    public interface IQuackable : IQuackObservable
-    {
-        void Quack();
-    }
+    void Quack();
 }

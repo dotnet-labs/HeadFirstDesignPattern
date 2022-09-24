@@ -1,28 +1,30 @@
-﻿using System;
+﻿namespace StrategyPattern.Duck;
 
-namespace StrategyPattern.Duck
+public interface IQuack
 {
-    public class CanQuack : IQuack
-    {
-        public void Quack()
-        {
-            Console.WriteLine("Quack.");
-        }
-    }
+    void Quack();
+}
 
-    public class MuteQuack : IQuack
+public class CanQuack : IQuack
+{
+    public void Quack()
     {
-        public void Quack()
-        {
-            Console.WriteLine("<<Silence>>");
-        }
+        Console.WriteLine("Quack.");
     }
+}
 
-    public class Squeak : IQuack
+public class MuteQuack : IQuack
+{
+    public void Quack()
     {
-        public void Quack()
-        {
-            Console.WriteLine("Squeak");
-        }
+        Console.WriteLine("<<Silence>>");
+    }
+}
+
+public class Squeak : IQuack
+{
+    public void Quack()
+    {
+        Console.WriteLine("Squeak");
     }
 }

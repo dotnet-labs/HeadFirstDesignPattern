@@ -1,22 +1,21 @@
-﻿namespace CommandPattern.RemoteControl.Commands.CeilingFanCommands
+﻿namespace CommandPattern.RemoteControl.Commands.CeilingFanCommands;
+
+public class CeilingFanOffCommand : ICommand
 {
-    public class CeilingFanOffCommand : ICommand
+    private readonly CeilingFan _ceilingFan;
+
+    public CeilingFanOffCommand(CeilingFan ceilingFan)
     {
-        private readonly CeilingFan _ceilingFan;
+        _ceilingFan = ceilingFan;
+    }
 
-        public CeilingFanOffCommand(CeilingFan ceilingFan)
-        {
-            _ceilingFan = ceilingFan;
-        }
+    public void Execute()
+    {
+        _ceilingFan.Off();
+    }
 
-        public void Execute()
-        {
-            _ceilingFan.Off();
-        }
-
-        public void Undo()
-        {
-            _ceilingFan.On();
-        }
+    public void Undo()
+    {
+        _ceilingFan.On();
     }
 }

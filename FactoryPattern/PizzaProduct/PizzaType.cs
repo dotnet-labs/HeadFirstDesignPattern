@@ -1,10 +1,9 @@
-﻿namespace FactoryPattern.PizzaProduct
+﻿namespace FactoryPattern.PizzaProduct;
+
+public enum PizzaType
 {
-    public enum PizzaType
-    {
-        Cheese = 0,
-        Pepperoni,
-        Clam,
-        Veggie
-    }
+    Cheese = 0,
+    Pepperoni,
+    Clam,
+    Veggie
 }

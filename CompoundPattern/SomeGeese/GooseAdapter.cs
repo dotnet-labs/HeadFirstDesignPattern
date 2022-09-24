@@ -1,37 +1,36 @@
 ﻿using CompoundPattern.Observable;
 
-namespace CompoundPattern.SomeGeese
+namespace CompoundPattern.SomeGeese;
+
+public class GooseAdapter : IQuackable
 {
-    public class GooseAdapter : IQuackable
+    private readonly Goose _goose;
+    private readonly IQuackObservable _observable;
+
+    public GooseAdapter(Goose goose)
     {
-        private readonly Goose _goose;
-        private readonly IQuackObservable _observable;
+        _goose = goose;
+        _observable = new QuackObservable(this);
+    }
 
-        public GooseAdapter(Goose goose)
-        {
-            _goose = goose;
-            _observable = new QuackObservable(this);
-        }
+    public void Quack()
+    {
+        _goose.Honk();
+        NotifyObservers();
+    }
 
-        public void Quack()
-        {
-            _goose.Honk();
-            NotifyObservers();
-        }
+    public void RegisterObserver(IObserver observer)
+    {
+        _observable.RegisterObserver(observer);
+    }
 
-        public void RegisterObserver(IObserver observer)
-        {
-            _observable.RegisterObserver(observer);
-        }
+    public void NotifyObservers()
+    {
+        _observable.NotifyObservers();
+    }
 
-        public void NotifyObservers()
-        {
-            _observable.NotifyObservers();
-        }
-
-        public override string ToString()
-        {
-            return "Goose";
-        }
+    public override string ToString()
+    {
+        return "Goose";
     }
 }

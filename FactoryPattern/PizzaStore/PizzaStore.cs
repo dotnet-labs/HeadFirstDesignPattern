@@ -15,6 +15,6 @@ namespace FactoryPattern.PizzaStore
             return pizza;
         }
 
-        protected abstract Pizza CreatePizza(PizzaType type);
+        protected abstract Pizza? CreatePizza(PizzaType type);
     }
 }

@@ -1,55 +1,51 @@
-﻿using System;
+﻿namespace SingletonPattern;
 
-namespace SingletonPattern
+public class ChocolateBoiler
 {
-    public class ChocolateBoiler
+    private static readonly Lazy<ChocolateBoiler> Lazy = new(() => new ChocolateBoiler());
+
+    public static ChocolateBoiler Instance => Lazy.Value;
+
+    private ChocolateBoiler()
     {
-        private static readonly Lazy<ChocolateBoiler> Lazy =
-            new Lazy<ChocolateBoiler>(() => new ChocolateBoiler());
+        Empty = true;
+        Boiled = false;
+    }
 
-        public static ChocolateBoiler Instance => Lazy.Value;
+    private bool Empty { get; set; }
+    private bool Boiled { get; set; }
 
-        private ChocolateBoiler()
+    public void Fill()
+    {
+        if (!Empty)
         {
-            Empty = true;
-            Boiled = false;
+            Console.WriteLine();
+            return;
         }
+        Empty = false;
+        Boiled = false;
+        Console.WriteLine("Fill the boiler with a milk/chocolate mixture.");
+    }
 
-        private bool Empty { get; set; }
-        private bool Boiled { get; set; }
-
-        public void Fill()
+    public void Drain()
+    {
+        if (Empty || !Boiled)
         {
-            if (!Empty)
-            {
-                Console.WriteLine();
-                return;
-            }
-            Empty = false;
-            Boiled = false;
-            Console.WriteLine("Fill the boilder with a milk/chocolate mixture.");
+            Console.WriteLine();
+            return;
         }
+        Console.WriteLine("Drain the boiled milk and chocolate.");
+        Empty = true;
+    }
 
-        public void Drain()
+    public void Boil()
+    {
+        if (Empty || Boiled)
         {
-            if (Empty || !Boiled)
-            {
-                Console.WriteLine();
-                return;
-            }
-            Console.WriteLine("Drain the boiled milk and chocolate.");
-            Empty = true;
+            Console.WriteLine();
+            return;
         }
-
-        public void Boil()
-        {
-            if (Empty || Boiled)
-            {
-                Console.WriteLine();
-                return;
-            }
-            Console.WriteLine("Bring the contents to a boil.");
-            Boiled = true;
-        }
+        Console.WriteLine("Bring the contents to a boil.");
+        Boiled = true;
     }
 }

@@ -2,7 +2,6 @@
 using CommandPattern.RemoteControl.Commands.GarageDoorCommands;
 using CommandPattern.RemoteControl.Commands.LightCommands;
 using CommandPattern.RemoteControl.Commands.Stereo;
-using System;
 
 namespace CommandPattern.RemoteControl
 {
