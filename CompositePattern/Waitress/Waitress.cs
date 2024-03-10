@@ -2,17 +2,10 @@
 
 namespace CompositePattern.Waitress;
 
-public class Waitress
+public class Waitress(IMenuComponent allMenus)
 {
-    private readonly IMenuComponent _allMenus;
-
-    public Waitress(IMenuComponent allMenus)
-    {
-        _allMenus = allMenus;
-    }
-
     public void PrintMenu()
     {
-        _allMenus.Print();
+        allMenus.Print();
     }
 }

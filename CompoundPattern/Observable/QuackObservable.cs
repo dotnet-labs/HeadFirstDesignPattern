@@ -1,15 +1,8 @@
 ﻿namespace CompoundPattern.Observable;
 
-public class QuackObservable : IQuackObservable
+public class QuackObservable(IQuackObservable duck) : IQuackObservable
 {
-    private readonly List<IObserver> _observers;
-    private readonly IQuackObservable _duck;
-
-    public QuackObservable(IQuackObservable duck)
-    {
-        _observers = new List<IObserver>();
-        _duck = duck;
-    }
+    private readonly List<IObserver> _observers = new();
 
     public void RegisterObserver(IObserver observer)
     {
@@ -20,7 +13,7 @@ public class QuackObservable : IQuackObservable
     {
         foreach (var observer in _observers)
         {
-            observer.Update(_duck);
+            observer.Update(duck);
         }
     }
 }

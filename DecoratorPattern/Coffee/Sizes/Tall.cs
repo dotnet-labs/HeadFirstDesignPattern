@@ -2,12 +2,8 @@
 
 namespace DecoratorPattern.Coffee.Sizes;
 
-public class Tall : SizeDecorator
+public class Tall(Beverage beverage) : SizeDecorator(beverage)
 {
-    public Tall(Beverage beverage) : base(beverage)
-    {
-    }
-
     public override string GetDescription()
     {
         return Beverage.GetDescription() + ", Tall";

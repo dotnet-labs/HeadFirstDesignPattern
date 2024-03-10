@@ -1,21 +1,14 @@
 ﻿namespace CommandPattern.RemoteControl.Commands.CeilingFanCommands;
 
-public class CeilingFan
+public class CeilingFan(string name = "")
 {
-    private readonly string _name;
-
-    public CeilingFan(string name = "")
-    {
-        _name = name;
-    }
-
     public void On()
     {
-        Console.WriteLine($"{_name} Fan is On.");
+        Console.WriteLine($"{name} Fan is On.");
     }
 
     public void Off()
     {
-        Console.WriteLine($"{_name} Fan is Off");
+        Console.WriteLine($"{name} Fan is Off");
     }
 }

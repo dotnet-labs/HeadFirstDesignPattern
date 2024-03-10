@@ -28,3 +28,5 @@ public class FlyRocketPowered : IFly
         Console.WriteLine("I'm flying with a rocket.");
     }
 }
+
+public readonly record struct SimpleValueChange(string PropertyName, string OldValue, string NewValue);

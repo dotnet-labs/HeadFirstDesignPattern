@@ -1,21 +1,14 @@
 ﻿namespace CommandPattern.RemoteControl.Commands.LightCommands;
 
-public class Light
+public class Light(string name = "")
 {
-    private readonly string _name;
-
-    public Light(string name = "")
-    {
-        _name = name;
-    }
-
     public void On()
     {
-        Console.WriteLine($"{_name} Light is On.");
+        Console.WriteLine($"{name} Light is On.");
     }
 
     public void Off()
     {
-        Console.WriteLine($"{_name} Light is Off.");
+        Console.WriteLine($"{name} Light is Off.");
     }
 }

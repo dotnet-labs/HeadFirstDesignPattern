@@ -2,14 +2,9 @@
 
 namespace StatePattern.States;
 
-public class SoldOutState : IState
+public class SoldOutState(GumballMachine gumballMachine) : IState
 {
-    private readonly GumballMachine _gumballMachine;
-
-    public SoldOutState(GumballMachine gumballMachine)
-    {
-        _gumballMachine = gumballMachine;
-    }
+    private readonly GumballMachine _gumballMachine = gumballMachine;
 
     public void InsertQuarter()
     {

@@ -2,12 +2,7 @@
 
 namespace DecoratorPattern.Coffee.Sizes;
 
-public abstract class SizeDecorator : Beverage
+public abstract class SizeDecorator(Beverage beverage) : Beverage
 {
-    protected Beverage Beverage;
-
-    protected SizeDecorator(Beverage beverage)
-    {
-        Beverage = beverage;
-    }
+    protected Beverage Beverage = beverage;
 }

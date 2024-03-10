@@ -2,15 +2,9 @@
 
 namespace StatePattern.States;
 
-public class HasQuarterState : IState
+public class HasQuarterState(GumballMachine gumballMachine) : IState
 {
     private readonly Random _randomWinner = new();
-    private readonly GumballMachine _gumballMachine;
-
-    public HasQuarterState(GumballMachine gumballMachine)
-    {
-        _gumballMachine = gumballMachine;
-    }
 
     public void InsertQuarter()
     {
@@ -20,20 +14,20 @@ public class HasQuarterState : IState
     public void EjectQuarter()
     {
         Console.WriteLine("Quarter returned.");
-        _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
+        gumballMachine.SetState(gumballMachine.GetNoQuarterState());
     }
 
     public void TurnCrank()
     {
         Console.WriteLine("You turned...");
         var winner = _randomWinner.Next(10);
-        if (winner == 0 && _gumballMachine.Count > 1)
+        if (winner == 0 && gumballMachine.Count > 1)
         {
-            _gumballMachine.SetState(_gumballMachine.GetWinnerState());
+            gumballMachine.SetState(gumballMachine.GetWinnerState());
         }
         else
         {
-            _gumballMachine.SetState(_gumballMachine.GetSoldState());
+            gumballMachine.SetState(gumballMachine.GetSoldState());
         }
     }
 

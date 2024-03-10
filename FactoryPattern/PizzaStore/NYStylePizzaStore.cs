@@ -5,11 +5,7 @@ namespace FactoryPattern.PizzaStore;
 
 public class NyStylePizzaStore : PizzaStore
 {
-    private readonly NyPizzaIngredientFactory _ingredientFactory;
-    public NyStylePizzaStore()
-    {
-        _ingredientFactory = new NyPizzaIngredientFactory();
-    }
+    private readonly NyPizzaIngredientFactory _ingredientFactory = new();
 
     protected override Pizza? CreatePizza(PizzaType type)
     {

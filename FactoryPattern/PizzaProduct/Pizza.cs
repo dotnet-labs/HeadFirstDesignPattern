@@ -3,7 +3,7 @@ using FactoryPattern.PizzaIngredient.Ingredients;
 
 namespace FactoryPattern.PizzaProduct;
 
-public abstract class Pizza
+public abstract class Pizza(IPizzaIngredientFactory ingredientFactory)
 {
     public string Name { get; protected set; } = string.Empty;
     public IDough Dough { get; protected set; } = null!;
@@ -12,12 +12,7 @@ public abstract class Pizza
     public ICheese Cheese { get; protected set; } = null!;
     public IPepperoni Pepperoni { get; protected set; } = null!;
     public IClams Clams { get; protected set; } = null!;
-    protected readonly IPizzaIngredientFactory IngredientFactory;
-
-    protected Pizza(IPizzaIngredientFactory ingredientFactory)
-    {
-        IngredientFactory = ingredientFactory;
-    }
+    protected readonly IPizzaIngredientFactory IngredientFactory = ingredientFactory;
 
     public abstract void Prepare();
 

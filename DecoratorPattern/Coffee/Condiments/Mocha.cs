@@ -2,12 +2,8 @@
 
 namespace DecoratorPattern.Coffee.Condiments;
 
-public class Mocha : CondimentDecorator
+public class Mocha(Beverage beverage) : CondimentDecorator(beverage)
 {
-    public Mocha(Beverage beverage) : base(beverage)
-    {
-    }
-
     public override string GetDescription()
     {
         return Beverage.GetDescription() + ", Mocha";

@@ -2,12 +2,8 @@
 
 namespace DecoratorPattern.Coffee.Condiments;
 
-public class Milk : CondimentDecorator
+public class Milk(Beverage beverage) : CondimentDecorator(beverage)
 {
-    public Milk(Beverage beverage) : base(beverage)
-    {
-    }
-
     public override string GetDescription()
     {
         return Beverage.GetDescription() + ", Milk";

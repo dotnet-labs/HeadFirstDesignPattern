@@ -2,15 +2,11 @@
 
 public class WeatherData : ISubject
 {
-    private readonly List<IObserver> _observers;
+    private readonly List<IObserver> _observers = new();
     private float _temperature;
     private float _humidity;
     private float _pressure;
 
-    public WeatherData()
-    {
-        _observers = new List<IObserver>();
-    }
     public void RegisterObserver(IObserver o)
     {
         _observers.Add(o);

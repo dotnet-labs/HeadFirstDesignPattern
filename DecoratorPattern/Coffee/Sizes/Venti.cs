@@ -2,12 +2,8 @@
 
 namespace DecoratorPattern.Coffee.Sizes;
 
-public class Venti : SizeDecorator
+public class Venti(Beverage beverage) : SizeDecorator(beverage)
 {
-    public Venti(Beverage beverage) : base(beverage)
-    {
-    }
-
     public override string GetDescription()
     {
         return Beverage.GetDescription() + ", Venti";

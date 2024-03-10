@@ -2,12 +2,8 @@
 
 namespace FactoryPattern.PizzaProduct;
 
-public class CheesePizza : Pizza
+public class CheesePizza(IPizzaIngredientFactory ingredientFactory) : Pizza(ingredientFactory)
 {
-    public CheesePizza(IPizzaIngredientFactory ingredientFactory) : base(ingredientFactory)
-    {
-    }
-
     public override void Prepare()
     {
         Console.WriteLine("Preparing " + Name);

@@ -1,15 +1,9 @@
 ﻿namespace StrategyPattern.Duck;
 
-public abstract class Duck
+public abstract class Duck(IFly flyBehavior, IQuack quackBehavior)
 {
-    protected IFly FlyBehavior;
-    protected IQuack QuackBehavior;
-
-    protected Duck(IFly flyBehavior, IQuack quackBehavior)
-    {
-        FlyBehavior = flyBehavior;
-        QuackBehavior = quackBehavior;
-    }
+    protected IFly FlyBehavior = flyBehavior;
+    protected IQuack QuackBehavior = quackBehavior;
 
     public void Swim()
     {

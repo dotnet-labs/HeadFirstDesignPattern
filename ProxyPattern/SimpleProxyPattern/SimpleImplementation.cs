@@ -11,15 +11,9 @@ internal class ProxyContainer
     }
 
     // The Proxy
-    public class SimpleProxy
+    public class SimpleProxy(string password)
     {
         private ComplexProtectedExpensiveResource? _complexProtectedResource;
-        private readonly string _password;
-
-        public SimpleProxy(string password)
-        {
-            _password = password;
-        }
 
         public void DoWork()
         {
@@ -32,7 +26,7 @@ internal class ProxyContainer
         bool Authenticate()
         {
             //authenticate request
-            if (_password == "password")
+            if (password == "password")
             {
                 //create expensive object if authenticated
                 _complexProtectedResource ??= new ComplexProtectedExpensiveResource();

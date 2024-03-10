@@ -1,5 +1,13 @@
 ﻿using StrategyPattern.Duck;
 
+var b = true.ToString();
+Console.WriteLine(b);
+var a = bool.TrueString;
+Console.WriteLine(a);
+if (a == b)
+{
+
+}
 var mallard = new MallardDuck();
 mallard.Display();
 mallard.PerformFly();

@@ -2,25 +2,18 @@
 
 namespace IteratorPattern.Iterator;
 
-public class DinnerMenuIterator : IIterator
+public class DinnerMenuIterator(MenuItem[] items) : IIterator
 {
-    private readonly MenuItem[] _items;
-    private int _index;
-
-    public DinnerMenuIterator(MenuItem[] items)
-    {
-        _items = items;
-        _index = 0;
-    }
+    private int _index = 0;
 
     public bool HasNext()
     {
-        return _index < _items.Length;
+        return _index < items.Length;
     }
 
     public object Next()
     {
-        var menuItem = _items[_index];
+        var menuItem = items[_index];
         _index++;
         return menuItem;
     }

@@ -1,17 +1,10 @@
 ﻿namespace CompositePattern.MenuComponent;
 
-public class Menu : IMenuComponent
+public class Menu(string description, string name) : IMenuComponent
 {
-    public string Name { get; }
-    public string Description { get; }
-    private readonly List<IMenuComponent> _menuComponents;
-
-    public Menu(string description, string name)
-    {
-        Description = description;
-        Name = name;
-        _menuComponents = new List<IMenuComponent>();
-    }
+    public string Name { get; } = name;
+    public string Description { get; } = description;
+    private readonly List<IMenuComponent> _menuComponents = new();
 
 
     public void Add(IMenuComponent menuComponent)

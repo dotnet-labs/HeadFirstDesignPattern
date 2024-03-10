@@ -2,12 +2,7 @@
 
 namespace DecoratorPattern.Coffee.Condiments;
 
-public abstract class CondimentDecorator : Beverage
+public abstract class CondimentDecorator(Beverage beverage) : Beverage
 {
-    protected Beverage Beverage;
-
-    protected CondimentDecorator(Beverage beverage)
-    {
-        Beverage = beverage;
-    }
+    protected Beverage Beverage = beverage;
 }

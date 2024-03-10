@@ -2,25 +2,18 @@
 
 namespace IteratorPattern.Iterator;
 
-internal class PancakeHouseMenuIterator : IIterator
+internal class PancakeHouseMenuIterator(List<MenuItem> menuItems) : IIterator
 {
-    private readonly List<MenuItem> _menuItems;
-    private int _index;
-
-    public PancakeHouseMenuIterator(List<MenuItem> menuItems)
-    {
-        _menuItems = menuItems;
-        _index = 0;
-    }
+    private int _index = 0;
 
     public bool HasNext()
     {
-        return _index + 1 <= _menuItems.Count;
+        return _index + 1 <= menuItems.Count;
     }
 
     public object Next()
     {
-        var menuItem = _menuItems[_index];
+        var menuItem = menuItems[_index];
         _index++;
         return menuItem;
     }

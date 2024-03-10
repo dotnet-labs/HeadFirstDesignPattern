@@ -2,15 +2,8 @@
 
 namespace StatePattern.States;
 
-public class SoldState : IState
+public class SoldState(GumballMachine gumballMachine) : IState
 {
-    private readonly GumballMachine _gumballMachine;
-
-    public SoldState(GumballMachine gumballMachine)
-    {
-        _gumballMachine = gumballMachine;
-    }
-
     public void InsertQuarter()
     {
         Console.WriteLine("Please wait, we're already giving you a gumball.");
@@ -28,15 +21,15 @@ public class SoldState : IState
 
     public void Dispense()
     {
-        _gumballMachine.ReleaseBall();
-        if (_gumballMachine.Count > 0)
+        gumballMachine.ReleaseBall();
+        if (gumballMachine.Count > 0)
         {
-            _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
+            gumballMachine.SetState(gumballMachine.GetNoQuarterState());
         }
         else
         {
             Console.WriteLine("Oops, out of gumballs!");
-            _gumballMachine.SetState(_gumballMachine.GetSoldOutState());
+            gumballMachine.SetState(gumballMachine.GetSoldOutState());
         }
     }
 }

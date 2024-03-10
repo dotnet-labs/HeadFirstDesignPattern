@@ -2,19 +2,12 @@
 
 namespace StatePattern.States;
 
-public class NoQuarterState : IState
+public class NoQuarterState(GumballMachine gumballMachine) : IState
 {
-    private readonly GumballMachine _gumballMachine;
-
-    public NoQuarterState(GumballMachine gumballMachine)
-    {
-        _gumballMachine = gumballMachine;
-    }
-
     public void InsertQuarter()
     {
         Console.WriteLine("You inserted a quarter.");
-        _gumballMachine.SetState(_gumballMachine.GetHasQuarterState());
+        gumballMachine.SetState(gumballMachine.GetHasQuarterState());
     }
 
     public void EjectQuarter()

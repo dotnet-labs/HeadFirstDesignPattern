@@ -3,21 +3,12 @@ using IteratorPattern.Menu;
 
 namespace IteratorPattern.Waitress;
 
-public class Waitress
+public class Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu)
 {
-    private readonly IMenu _pancakeHouseMenu;
-    private readonly IMenu _dinerMenu;
-
-    public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu)
-    {
-        _pancakeHouseMenu = pancakeHouseMenu;
-        _dinerMenu = dinerMenu;
-    }
-
     public void PrintMenu()
     {
-        var pancakeIterator = _pancakeHouseMenu.CreateIterator();
-        var dinerIterator = _dinerMenu.CreateIterator();
+        var pancakeIterator = pancakeHouseMenu.CreateIterator();
+        var dinerIterator = dinerMenu.CreateIterator();
         Console.WriteLine("MENU\n------\nBREAKFAST");
         PrintMenu(pancakeIterator);
         Console.WriteLine("\nLUNCH");

@@ -2,20 +2,13 @@
 
 namespace CompositePattern.MenuComponent;
 
-public class MenuItem : IMenuComponent
+public class MenuItem(string name, string description, bool isVegetarian, decimal price)
+    : IMenuComponent
 {
-    public string Name { get; }
-    public string Description { get; }
-    public bool IsVegetarian { get; }
-    public decimal Price { get; }
-
-    public MenuItem(string name, string description, bool isVegetarian, decimal price)
-    {
-        Name = name;
-        Description = description;
-        IsVegetarian = isVegetarian;
-        Price = price;
-    }
+    public string Name { get; } = name;
+    public string Description { get; } = description;
+    public bool IsVegetarian { get; } = isVegetarian;
+    public decimal Price { get; } = price;
 
     public void Add(IMenuComponent menuComponent)
     {

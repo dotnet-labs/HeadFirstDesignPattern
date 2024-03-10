@@ -2,12 +2,8 @@
 
 namespace DecoratorPattern.Coffee.Condiments;
 
-public class Whip : CondimentDecorator
+public class Whip(Beverage beverage) : CondimentDecorator(beverage)
 {
-    public Whip(Beverage beverage) : base(beverage)
-    {
-    }
-
     public override string GetDescription()
     {
         return Beverage.GetDescription() + ", Whip";
